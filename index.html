@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #box {
+            position: absolute;
+            top: 40%;
+            left: 32vw;
+            /* margin-top: -50px; */
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- share card -->
+    <div class="card text-center">
+        <div class="card-header">
+            Featured
+        </div>
+        <div class="card-body">
+
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a class="btn btn-primary fab fa-whatsapp" id="whatapp"
+                onclick="window.open('https://wa.me/?text=abc www.abc.com')"> whatapp</a>
+            <a id="instagram" href="mailto:?subject=oferr coupon &body=abc" class="btn btn-primary far fa-envelope ">
+                gmail</a>
+            <a id="facebook" onclick="window.open('https://m.me/&message=abc')" class="btn btn-primary fab fa-facebook">
+                facebook</a>
+        </div>
+        <div class="card-footer text-muted">
+            2 days ago
+        </div>
+    </div><br><br>
+
+    <!-- login form -->
+    <div id="box" class="col-sm-4 card text-center " style="border: 2px solid black;">
+        <div class="remaining" style="margin: 10px;">
+            <label for="exampleInputEmail1" class="form-label">remaining send:</label>
+            <input type="text" name="TextBox" id="TextBox" value="5" readonly>
+        </div>
+        <form action="https://coupons.oneindia.com/amazon-coupons" method="POST" id="form"
+            style="padding: 40px; display: none;" target="_blank">
+            <div class="mb-3">
+                <label style="border: 2px solid black;" for="exampleInputPassword1" class="form-label"> ..please login
+                    and
+                    go forward for amazing gift.. </label>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">email_id</label>
+                <input id="email" type="email" class="form-control" aria-describedby="emailHelp" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">password</label>
+                <input id="password" type="password" class="form-control" required>
+            </div>
+            <button id="submit" type="submit" class="btn btn-primary">Go TO Next</button>
+        </form>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#facebook,#instagram,#whatapp').click(function () {
+                var counter = $('#TextBox').val();
+                counter--;
+                $('#TextBox').val(counter);
+                Openform(counter);
+            });
+        });
+
+        function Openform(counter) {
+            if (counter == 0) {
+                document.getElementById('form').style.display = '';
+            } else {
+                document.getElementById('form').style.display = 'none';
+            }
+        }
+    </script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
